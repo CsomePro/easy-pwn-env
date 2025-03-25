@@ -2,38 +2,38 @@
 set -x
 
 # Remove the virtual environment
-if [ -d "~/pwn" ]; then
-  rm -rf ~/pwn
+if [ -d "$HOME/pwn" ]; then
+  rm -rf "$HOME/pwn"
   echo "Removed virtual environment 'pwn'."
 else
   echo "Virtual environment 'pwn' not found. Skipping."
 fi
 
 # Remove oh my tmux
-if [ -d "~/.tmux" ]; then
-  rm -rf ~/.tmux
+if [ -d "$HOME/.tmux" ]; then
+  rm -rf "$HOME/.tmux"
   echo "Removed '.tmux' directory."
 else
   echo "'.tmux' directory not found. Skipping."
 fi
 
-if [ -f "~/.tmux.conf" ]; then
-  rm -f ~/.tmux.conf
+if [ -f "$HOME/.tmux.conf" ]; then
+  rm -f "$HOME/.tmux.conf"
   echo "Removed '.tmux.conf' symlink."
 else
   echo "'.tmux.conf' symlink not found. Skipping."
 fi
 
-if [ -f "~/.tmux.conf.local" ]; then
-  rm -f ~/.tmux.conf.local
+if [ -f "$HOME/.tmux.conf.local" ]; then
+  rm -f "$HOME/.tmux.conf.local"
   echo "Removed '.tmux.conf.local'."
 else
   echo "'.tmux.conf.local' not found. Skipping."
 fi
 
 # Remove pwndbg
-if [ -d "~/pwndbg" ]; then
-  rm -rf ~/pwndbg
+if [ -d "$HOME/pwndbg" ]; then
+  rm -rf "$HOME/pwndbg"
   echo "Removed 'pwndbg' directory."
 else
   echo "'pwndbg' directory not found. Skipping."
@@ -47,16 +47,16 @@ else
   echo "Neovim installation not found. Skipping."
 fi
 
-if [ -d "~/.config/nvim" ]; then
-  rm -rf ~/.config/nvim
+if [ -d "$HOME/.config/nvim" ]; then
+  rm -rf "$HOME/.config/nvim"
   echo "Removed Neovim configuration."
 else
   echo "Neovim configuration not found. Skipping."
 fi
 
 # Remove PATH modification for Neovim
-if grep -q '/opt/nvim-linux-x86_64/bin' ~/.bashrc; then
-  sed -i '/\/opt\/nvim-linux-x86_64\/bin/d' ~/.bashrc
+if grep -q '/opt/nvim-linux-x86_64/bin' "$HOME/.bashrc"; then
+  sed -i '/\/opt\/nvim-linux-x86_64\/bin/d' "$HOME/.bashrc"
   echo "Removed Neovim PATH modification from .bashrc."
 else
   echo "Neovim PATH modification not found in .bashrc. Skipping."
