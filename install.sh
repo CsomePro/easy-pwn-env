@@ -9,7 +9,8 @@ git clone https://github.com/CsomePro/easy-pwn-env.git || exit 1
 
 sudo apt-get install -y \
   python-is-python3 \
-  tmux ||
+  tmux \
+  python3.12-venv ||
   exit 1
 
 # save current path
