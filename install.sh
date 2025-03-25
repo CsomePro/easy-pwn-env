@@ -5,7 +5,11 @@ sudo apt-get update || exit 1
 
 sudo apt-get install git -y || exit 1
 
-git clone https://github.com/CsomePro/easy-pwn-env.git || exit 1
+if [ ! -d "./easy-pwn-env" ]; then
+  git clone https://github.com/CsomePro/easy-pwn-env.git || exit 1
+else
+  echo "Directory 'easy-pwn-env' already exists. Skipping clone."
+fi
 
 sudo apt-get install -y \
   python-is-python3 \
@@ -19,7 +23,9 @@ DIR=$(pwd)
 
 # install oh my tmux
 cd ~
-git clone --single-branch https://github.com/gpakosz/.tmux.git
+if [ ! -d "./.tmux" ]; then
+  git clone --single-branch https://github.com/gpakosz/.tmux.git || exit 1
+fi
 ln -s -f .tmux/.tmux.conf
 # cp .tmux/.tmux.conf.local .
 
@@ -43,7 +49,9 @@ pip install pwntools || exit 1
 
 # install pwndbg
 cd ~
-git clone https://github.com/pwndbg/pwndbg
+if [ ! -d "./pwndbg" ]; then
+  git clone https://github.com/pwndbg/pwndbg || exit 1
+fi
 cd pwndbg
 ./setup.sh || exit 1
 
