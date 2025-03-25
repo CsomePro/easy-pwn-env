@@ -10,7 +10,8 @@ git clone https://github.com/CsomePro/easy-pwn-env.git || exit 1
 sudo apt-get install -y \
   python-is-python3 \
   tmux \
-  python3-venv ||
+  python3-venv \
+  gcc ||
   exit 1
 
 # save current path
@@ -38,13 +39,13 @@ else
 fi
 
 # install pwntools
-pip install pwntools
+pip install pwntools || exit 1
 
 # install pwndbg
 cd ~
 git clone https://github.com/pwndbg/pwndbg
 cd pwndbg
-./setup.sh
+./setup.sh || exit 1
 
 # install nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
