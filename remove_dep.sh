@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 echo "WARNING: This script will remove several packages and their dependencies from your system."
 echo "The following packages will be removed:"
@@ -23,6 +22,8 @@ if [[ "$confirmation" != "yes" ]]; then
   echo "Operation cancelled."
   exit 0
 fi
+
+set -x
 
 # Remove apt packages installed by install.sh and pwndbg setup
 sudo apt-get remove --purge -y \
