@@ -10,7 +10,7 @@ git clone https://github.com/CsomePro/easy-pwn-env.git || exit 1
 sudo apt-get install -y \
   python-is-python3 \
   tmux \
-  python3.12-venv ||
+  python3-venv ||
   exit 1
 
 # save current path
@@ -27,7 +27,7 @@ cp ./easy-pwn-env/.tmux.conf.local ~/
 
 # build the venv
 cd ~
-python3 -m venv pwn
+python -m venv pwn
 source pwn/bin/activate
 # check if pip is from the virtual environment
 if pip -V | grep -q "$(pwd)/pwn"; then
