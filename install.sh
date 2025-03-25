@@ -1,13 +1,13 @@
 #!/bin/bash
 set -x
 
-apt-get update || exit 1
+sudo apt-get update || exit 1
 
-apt-get install git -y || exit 1
+sudo apt-get install git -y || exit 1
 
 git clone https://github.com/CsomePro/easy-pwn-env.git || exit 1
 
-apt-get install -y \
+sudo apt-get install -y \
   python-is-python3 \
   tmux ||
   exit 1
