@@ -67,6 +67,6 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 # use self lazyvim option.lua
-cp ./easy-pwn-env/option.lua ~/.config/nvim/lua/config/options.lua
+cp ./easy-pwn-env/options.lua ~/.config/nvim/lua/config/options.lua
 
 echo "Install Succeed!. Please run 'source ~/.bashrc' to apply the changes."
