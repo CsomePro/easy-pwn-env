@@ -6,7 +6,7 @@ sudo apt-get update || exit 1
 sudo apt-get install git -y || exit 1
 
 if [ ! -d "./easy-pwn-env" ]; then
-  git clone https://github.com/CsomePro/easy-pwn-env.git || exit 1
+  git clone https://github.com/CsomePro/easy-pwn-env.git $HOME/easy-pwn-env-install || exit 1
 else
   echo "Directory 'easy-pwn-env' already exists. Skipping clone."
 fi
@@ -30,7 +30,7 @@ ln -s -f .tmux/.tmux.conf
 # cp .tmux/.tmux.conf.local .
 
 # use self local config
-cp ./easy-pwn-env/.tmux.conf.local ~/
+cp $HOME/easy-pwn-env-install/.tmux.conf.local ~/
 
 # build the venv
 cd ~
@@ -67,6 +67,6 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 # use self lazyvim option.lua
-cp ./easy-pwn-env/options.lua ~/.config/nvim/lua/config/options.lua
+cp $HOME/easy-pwn-env-install/options.lua ~/.config/nvim/lua/config/options.lua
 
 echo "Install Succeed!. Please run 'source ~/.bashrc' to apply the changes."
