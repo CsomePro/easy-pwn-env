@@ -5,7 +5,7 @@ sudo apt-get update || exit 1
 
 sudo apt-get install git -y || exit 1
 
-if [ ! -d "./easy-pwn-env" ]; then
+if [ ! -d "./easy-pwn-env-install" ]; then
   git clone https://github.com/CsomePro/easy-pwn-env.git $HOME/easy-pwn-env-install || exit 1
 else
   echo "Directory 'easy-pwn-env' already exists. Skipping clone."
