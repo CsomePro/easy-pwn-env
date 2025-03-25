@@ -26,7 +26,7 @@ fi
 set -x
 
 # Remove apt packages installed by install.sh and pwndbg setup
-sudo apt-get remove --purge -y \
+sudo apt-get remove --purge \
   git \
   python-is-python3 \
   tmux \
