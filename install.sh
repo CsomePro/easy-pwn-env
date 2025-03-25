@@ -30,7 +30,7 @@ ln -s -f .tmux/.tmux.conf
 # cp .tmux/.tmux.conf.local .
 
 # use self local config
-cp $HOME/easy-pwn-env-install/.tmux.conf.local ~/
+cp $HOME/easy-pwn-env-install/.tmux.conf.local ~/ || exit 1
 
 # build the venv
 cd ~
@@ -67,6 +67,6 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 # use self lazyvim option.lua
-cp $HOME/easy-pwn-env-install/options.lua ~/.config/nvim/lua/config/options.lua
+cp $HOME/easy-pwn-env-install/options.lua ~/.config/nvim/lua/config/options.lua || exit 1
 
 echo "Install Succeed!. Please run 'source ~/.bashrc' to apply the changes."
